@@ -8,7 +8,7 @@ module CatmullRom
 
 export catmullrom,               # populates with points placed between those given
        catmullrom_by_arclength,  # populates with points placed between those given relative to arclength
-       close_seq                 # ensures a point sequence is closed, precisely
+       close_seq!                # ensures a point sequence is closed, precisely
 
 using LinearAlgebra: dot, norm, normalize
 using Polynomials: Poly, polyval
@@ -19,7 +19,7 @@ include("presence/pointsequences.jl")
 
 # suggest outermost two points for Catmull-Rom spline sequence
 const ReflectionScale = 1.0
-const ArcpointsMin = 4
+const ArcpointsMin = 8
 const ArcpointsMax = 64
 
 include("fewpoints/outside.jl")
