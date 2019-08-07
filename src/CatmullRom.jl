@@ -10,9 +10,9 @@ export catmullrom,               # populates with points placed between those gi
        catmullrom_by_arclength,  # populates with points placed between those given relative to arclength
        close_seq!                # ensures a point sequence is closed, precisely
 
-using StructArrays
 using LinearAlgebra: dot, norm, normalize
-using Polynomials: Poly, polyval
+using Polynomials
+using StructArrays
 
 
 # The sorts of sequences understood to hold point coordinates

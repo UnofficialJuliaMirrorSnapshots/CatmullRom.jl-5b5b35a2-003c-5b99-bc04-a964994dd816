@@ -1,3 +1,6 @@
+Base.fieldnames(::Type{T}) where {T<:StructArray} = fieldnames(T.parameters[1])
+nfields(::Type{T}) where {T<:StructArray} = length(fieldnames(T))
+
 function Base.push!(collection::NTuple{N,NTuple{M,T}}, item::NTuple{M,T}) where {N,M,T}
     return (collection..., item)
 end
